@@ -8,6 +8,7 @@ import 'package:flutter_application_1/pages/scan.dart';
 import 'package:flutter_application_1/pages/user_profil.dart';
 import 'package:flutter_application_1/pages/new_payment.dart';
 import 'colors.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,7 +49,7 @@ class MainClass extends StatefulWidget {
 class _MainClassState extends State<MainClass> {
   int counter = 0;
   List pages = [Home(), NewPayment(), EstablishmentsSectors(), Transactions()];
-  int pageIndex = 0;
+  int pageIndex = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,7 @@ class _MainClassState extends State<MainClass> {
       drawer: Drawer(
         child: SingleChildScrollView(
           child: Container(
-            height: 400, // Définir la hauteur souhaitée pour le Drawer
+            // height: 400, // Définir la hauteur souhaitée pour le Drawer
             child: Column(
               children: [
                 DrawerHeader(
@@ -123,25 +124,31 @@ class _MainClassState extends State<MainClass> {
                 Column(
                   children: [
                     ListTile(
-                      leading: const Icon(Icons.favorite_border),
-                      title: const Text('Favourites'),
+                      leading: Icon(LineAwesomeIcons.heart),
+                      title: const Text('Favoris'),
                       onTap: () {
                         // Fermer le Drawer avant
                         Navigator.pop(context);
                         // Navigator.push(context, MaterialPageRoute(builder: (context) => FavouriteScreen()),);
                       },
                     ),
+                    
                     ListTile(
-                      leading: Icon(Icons.update),
-                      title: Text('Updates'),
+                      leading: Icon(LineAwesomeIcons.bell_solid),
+                      title: Text('Notifications'),
                       onTap: () {},
                     ),
                     const Divider(
                       color: Colors.black45,
                     ),
                     ListTile(
-                      leading: Icon(Icons.notifications_outlined),
-                      title: Text('Notifications'),
+                      leading: Icon(LineAwesomeIcons.redo_alt_solid),
+                      title: Text('Mise à jours'),
+                      onTap: () {},
+                    ),
+                    ListTile(
+                      leading: Icon(LineAwesomeIcons.info_circle_solid),
+                      title: Text('À propos'),
                       onTap: () {},
                     ),
                   ],

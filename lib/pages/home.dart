@@ -38,7 +38,6 @@ class _HomeStates extends State<Home> {
   
   @override
   Widget build(BuildContext context) {
-
     // print("current route name ${ModalRoute.of(context)?.settings.name}" );
 
     return Container(
@@ -131,33 +130,33 @@ class _HomeStates extends State<Home> {
                           ],
                         ),
                       ),
-                      Flexible(
-                        child: Container(
-                          height: double.infinity,
-                          child:
-                            Flexible(
-                              child: 
-                              ListView.builder(
-                                shrinkWrap: true,
-                                itemCount: filterOptions.length,
-                                itemBuilder: (context, index) {
-                                  return Container(
-                                    margin: EdgeInsets.only(top: 10, left: 3, right: 3),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: ListTile(
-                                      leading: Icon(filterOptions[index]["icon"] as IconData?),
-                                      title: Text (" ${filterOptions[index]["label"]}" ),
-                                      // subtitle: Text (_countries[index]["capital"][0]),
-                                    ),
-                                  );   
-                                },
-                              )
-                            )
-                        ),
-                      ),    
+                      // Flexible(
+                      //   child: Container(
+                      //     height: double.infinity,
+                      //     child:
+                      //       Flexible(
+                      //         child: 
+                      //         ListView.builder(
+                      //           shrinkWrap: true,
+                      //           itemCount: filterOptions.length,
+                      //           itemBuilder: (context, index) {
+                      //             return Container(
+                      //               margin: EdgeInsets.only(top: 10, left: 3, right: 3),
+                      //               decoration: BoxDecoration(
+                      //                 color: Colors.white,
+                      //                 borderRadius: BorderRadius.circular(10),
+                      //               ),
+                      //               child: ListTile(
+                      //                 leading: Icon(filterOptions[index]["icon"] as IconData?),
+                      //                 title: Text (" ${filterOptions[index]["label"]}" ),
+                      //                 // subtitle: Text (_countries[index]["capital"][0]),
+                      //               ),
+                      //             );   
+                      //           },
+                      //         )
+                      //       )
+                      //   ),
+                      // ),    
                     ],
                   ),
                 ),
