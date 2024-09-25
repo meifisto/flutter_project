@@ -117,8 +117,9 @@ class _HomeStates extends State<Home> {
               // height: 290,
               padding: const EdgeInsets.all(5),
               child: 
-                Flexible(
-                  child: Column(
+                // Flexible(
+                //   child: 
+                  Column(
                     children: [
                       Container(
                         margin: EdgeInsets.only(top: 10, left: 0, right: 0, bottom: 10),
@@ -130,38 +131,37 @@ class _HomeStates extends State<Home> {
                           ],
                         ),
                       ),
-                      // Flexible(
-                      //   child: Container(
-                      //     height: double.infinity,
-                      //     child:
-                      //       Flexible(
-                      //         child: 
-                      //         ListView.builder(
-                      //           shrinkWrap: true,
-                      //           itemCount: filterOptions.length,
-                      //           itemBuilder: (context, index) {
-                      //             return Container(
-                      //               margin: EdgeInsets.only(top: 10, left: 3, right: 3),
-                      //               decoration: BoxDecoration(
-                      //                 color: Colors.white,
-                      //                 borderRadius: BorderRadius.circular(10),
-                      //               ),
-                      //               child: ListTile(
-                      //                 leading: Icon(filterOptions[index]["icon"] as IconData?),
-                      //                 title: Text (" ${filterOptions[index]["label"]}" ),
-                      //                 // subtitle: Text (_countries[index]["capital"][0]),
-                      //               ),
-                      //             );   
-                      //           },
-                      //         )
-                      //       )
-                      //   ),
-                      // ),    
+                      Expanded(
+                        child: 
+                        Container(
+                          height: double.infinity,
+                          child:
+                            // Flexible(
+                            //   child: 
+                              ListView.builder(
+                                itemCount: filterOptions.length,
+                                itemBuilder: (context, index) {
+                                  return Container(
+                                    margin: EdgeInsets.only(top: 10, left: 3, right: 3),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: ListTile(
+                                      leading: Icon(filterOptions[index]["icon"] as IconData?),
+                                      title: Text (" ${filterOptions[index]["label"]}" ),
+                                      // subtitle: Text (_countries[index]["capital"][0]),
+                                    ),
+                                  );   
+                                },
+                              )
+                            // )
+                        ),
+                      ),    
                     ],
                   ),
-                ),
+                // ),
             ),
-          
           ),
           
         ],

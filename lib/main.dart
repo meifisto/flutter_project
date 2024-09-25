@@ -49,7 +49,7 @@ class MainClass extends StatefulWidget {
 class _MainClassState extends State<MainClass> {
   int counter = 0;
   List pages = [Home(), NewPayment(), EstablishmentsSectors(), Transactions()];
-  int pageIndex = 3;
+  int pageIndex = 0;
 
   @override
   Widget build(BuildContext context) {

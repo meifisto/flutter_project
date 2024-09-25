@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
   line_awesome_flutter: ^3.0.1
+  flutter_native_splash: ^2.4.1
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +52,14 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/images/logo.png"
+  android_12: 
+    image: "assets/images/logo.png"
+
 
 # The following section is specific to Flutter packages.
 flutter:
