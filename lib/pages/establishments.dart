@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import '../colors.dart';
 
 class Establishments extends StatefulWidget {
   const Establishments({super.key});
@@ -70,7 +71,7 @@ class _Establishments extends State<Establishments> {
           IconButton(onPressed: (){}, icon: Icon(Icons.more_vert))
         ],
         // elevation: 10,
-        backgroundColor: const Color(0xff175A97),
+        backgroundColor:  AppColors.primaryColor,
         // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
@@ -81,7 +82,7 @@ class _Establishments extends State<Establishments> {
             Container(
               padding: EdgeInsets.only(bottom: 15.0),
               decoration: const BoxDecoration(
-                color: const  Color(0xff175A97),
+                color:  AppColors.primaryColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(10), 
                   bottomRight: Radius.circular(10)

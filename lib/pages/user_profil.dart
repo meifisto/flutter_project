@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../colors.dart';
 
 class UserProfil extends StatefulWidget {
   const UserProfil({super.key});
@@ -22,7 +23,7 @@ class _UserProfilStates extends State<UserProfil> {
           
         ],
         // elevation: 10,
-        backgroundColor: Color(0xff175A97),
+        backgroundColor: AppColors.primaryColor,
         // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         iconTheme: IconThemeData(color: Colors.white),
       ),

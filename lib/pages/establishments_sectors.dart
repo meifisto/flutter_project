@@ -2,6 +2,7 @@ import 'dart:ffi';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import '../http_services/http_service.dart';
+import '../colors.dart';
 
 class EstablishmentsSectors extends StatefulWidget {
   const EstablishmentsSectors({super.key});
@@ -88,7 +89,7 @@ class _EstablishmentsSectorsState extends State<EstablishmentsSectors> {
             Container(
               padding: EdgeInsets.only(bottom: 15.0),
               decoration: const BoxDecoration(
-                color: const  Color(0xff175A97),
+                color: AppColors.primaryColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(10), 
                   bottomRight: Radius.circular(10)
@@ -250,7 +251,7 @@ class _EstablishmentsSectorsState extends State<EstablishmentsSectors> {
             //     child: _countries.isEmpty && loadingSector
             //       ? Center(
             //           child: CircularProgressIndicator(
-            //             valueColor: AlwaysStoppedAnimation<Color>(Color(0xff175A97)),
+            //             valueColor: AlwaysStoppedAnimation<Color>(AppColors.primaryColor),
             //             backgroundColor: Colors.white, // Couleur de fond
             //             strokeWidth: 6.0, // Largeur du trait
             //           ),

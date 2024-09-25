@@ -7,6 +7,7 @@ import 'package:flutter_application_1/pages/transactions.dart';
 import 'package:flutter_application_1/pages/scan.dart';
 import 'package:flutter_application_1/pages/user_profil.dart';
 import 'package:flutter_application_1/pages/new_payment.dart';
+import 'colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +20,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context){
     return  MaterialApp(
       theme: ThemeData(
-      colorSchemeSeed: const Color(0xffefefef),
-      scaffoldBackgroundColor: Colors.white),
+        colorSchemeSeed: const Color(0xffefefef),
+        scaffoldBackgroundColor: Colors.white
+      ),
       home: const MainClass(),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
@@ -60,114 +62,95 @@ class _MainClassState extends State<MainClass> {
           IconButton(onPressed: (){}, icon: Icon(Icons.more_vert))
         ],
         // elevation: 10,
-        backgroundColor: const Color(0xff175A97),
+        backgroundColor: AppColors.primaryColor,
         // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       drawer: Drawer(
-        child: Column(
-          children: [
-            Container(
-              height: 550,
-              child: ListView(
-                children: [
-                  DrawerHeader(
-                    decoration: const BoxDecoration(
-                      color: Color(0xff175A97),
-                    ),
-                    child: Material(
-                      color: const Color(0xff175A97),
-                      child: InkWell(
-                        onTap: (){
-                          Navigator.pop(context); /// Close Navigation drawer before
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => UserProfil()),);
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(5),
-                          child: const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 45,
-                                backgroundImage: NetworkImage(
-                                    'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHNtaWx5JTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
+        child: SingleChildScrollView(
+          child: Container(
+            height: 400, // Définir la hauteur souhaitée pour le Drawer
+            child: Column(
+              children: [
+                DrawerHeader(
+                  decoration: const BoxDecoration(
+                    color: AppColors.primaryColor,
+                  ),
+                  child: Material(
+                    color: AppColors.primaryColor,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context); // Fermer le Drawer avant
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UserProfil()),
+                        );
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(5),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: 45,
+                              backgroundImage: NetworkImage(
+                                  'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHNtaWx5JTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'),
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(height: 10),
+                                Text(
+                                  'Sophia',
+                                  style: TextStyle(
+                                      fontSize: 28, color: Colors.white),
                                 ),
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(height: 10,),
-                                  Text('Sophia',
-                                    style: TextStyle(
-                                        fontSize: 28,
-                                        color: Colors.white
-                                    ),),
-                                  Text('@sophia.com',
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.white
-                                    ),),
-                                ],
-                              ),
-                            ],
-                          )
+                                Text(
+                                  '@sophia.com',
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ),
-                  Column(
-                    children: [
-                      ListTile(
-                        leading: const Icon(Icons.home_outlined),
-                        title: const Text('Home'),
-                        onTap: (){
-                          /// Close Navigation drawer before
-                          Navigator.pop(context);
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()),);
-                        },
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.favorite_border),
-                        title: const Text('Favourites'),
-                        onTap: (){
-                          /// Close Navigation drawer before
-                          Navigator.pop(context);
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => FavouriteScreen()),);
-                        },
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.workspaces),
-                        title: Text('Workflow'),
-                        onTap: (){},
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.update),
-                        title: Text('Updates'),
-                        onTap: (){},
-                      ),
-                      const Divider(color: Colors.black45,),
-                      ListTile(
-                        leading: Icon(Icons.account_tree_outlined),
-                        title: Text('Plugins'),
-                        onTap: (){},
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.notifications_outlined),
-                        title: Text('Notifications'),
-                        onTap: (){},
-                      ),
-                    ],
-                  )
-                ],
-                )
+                ),
+                Column(
+                  children: [
+                    ListTile(
+                      leading: const Icon(Icons.favorite_border),
+                      title: const Text('Favourites'),
+                      onTap: () {
+                        // Fermer le Drawer avant
+                        Navigator.pop(context);
+                        // Navigator.push(context, MaterialPageRoute(builder: (context) => FavouriteScreen()),);
+                      },
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.update),
+                      title: Text('Updates'),
+                      onTap: () {},
+                    ),
+                    const Divider(
+                      color: Colors.black45,
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.notifications_outlined),
+                      title: Text('Notifications'),
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ],
-          
+          ),
         ),
       ),
-        
-        
       
       body: pages[pageIndex],
       bottomNavigationBar: BottomNavigationBar(

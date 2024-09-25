@@ -80,8 +80,7 @@ class _HomeStates extends State<Home> {
                         borderRadius: BorderRadius.circular(10)
                       ),
                       padding: EdgeInsets.all(5),
-                      elevation: 12,
-                      
+                      elevation: 7,
                     )
                   ),
                   // scan
@@ -102,7 +101,7 @@ class _HomeStates extends State<Home> {
                         borderRadius: BorderRadius.circular(10)
                       ),
                       padding: EdgeInsets.all(5),
-                      elevation: 12
+                      elevation: 7,
                     )
                   ),
                 ],
