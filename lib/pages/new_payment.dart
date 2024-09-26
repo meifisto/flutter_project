@@ -16,35 +16,35 @@ class _NewPaymentState extends State<NewPayment> {
   
   List<Map<dynamic, dynamic>> servicesList = [
     {
-      "label": "Médical & Hopital & Clinique",
+      "label": "Pharmacie Iita",
       "icon": LineAwesomeIcons.procedures_solid,
       "color": 0xff4bb26b,
       "estimation" : "01h45min de marche environ",
       "distance" : "2.454 km - Cotonou",
     },
     {
-      "label": "Prestation & Services", 
+      "label": "Orca Déco", 
       "icon": LineAwesomeIcons.toolbox_solid,
       "color": 0xffeb8440,
       "estimation" : "03h45min de marche environ",
       "distance" : "1.4564 km - Calavi",
     },
     {
-      "label": "Marché des Arts",
+      "label": "Marché des Arts de Gbégamey",
       "icon": LineAwesomeIcons.palette_solid,
       "color": 0xff4077eb,
       "estimation" : "03h45min de marche environ",
       "distance" : "10.4564 km - Cotonou",
     },
     {
-      "label": "Restaurant",
+      "label": "Karim 24",
       "icon": LineAwesomeIcons.utensils_solid,
       "color": 0xffe32361,
       "estimation" : "02h45min de marche environ",
       "distance" : "15.4564 km - Calavi",
     },
     {
-      "label": "Pharmacie",
+      "label": "Mafita Helpers",
       "icon": LineAwesomeIcons.prescription_bottle_alt_solid,
       "color": 0xff4bb26b,
       "estimation" : "04h05min de marche environ",
@@ -76,7 +76,7 @@ class _NewPaymentState extends State<NewPayment> {
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                    margin: const EdgeInsets.all(5.0),
                     child: TextField(
                       style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(
@@ -140,7 +140,7 @@ class _NewPaymentState extends State<NewPayment> {
                         elevation: 5,
                         child: 
                           ListTile(
-                            leading: const Icon(LineAwesomeIcons.city_solid),
+                            leading: Icon(servicesList[index]["icon"] as IconData?),
                             title: Text(
                               servicesList[index]["label"],
                               style: const TextStyle(

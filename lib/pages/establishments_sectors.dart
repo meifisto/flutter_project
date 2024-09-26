@@ -98,7 +98,7 @@ class _EstablishmentsSectorsState extends State<EstablishmentsSectors> {
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                    margin: const EdgeInsets.all(5.0),
                     child: TextField(
                       style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(
@@ -119,6 +119,18 @@ class _EstablishmentsSectorsState extends State<EstablishmentsSectors> {
                           filterInput = value;
                         });
                       },
+                    ),
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.only(top: 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      
+                      children: [
+                        ElevatedButton(onPressed: (){}, child: const Text('Liste 2')),
+                        ElevatedButton(onPressed: (){}, child: const Text('Liste 3')),
+                      ],
                     ),
                   ),
                   
@@ -183,7 +195,7 @@ class _EstablishmentsSectorsState extends State<EstablishmentsSectors> {
 
             // Text('Liste : 2'),
             Expanded(child: Container(
-              margin: EdgeInsets.only(top: 10),
+              margin: const EdgeInsets.only(top: 10),
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -195,7 +207,6 @@ class _EstablishmentsSectorsState extends State<EstablishmentsSectors> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      print('Container clicked!');
                       Navigator.pushNamed(context, '/establishments');
                     },
                     child: 
@@ -211,6 +222,7 @@ class _EstablishmentsSectorsState extends State<EstablishmentsSectors> {
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 12.0,
+                              fontWeight: FontWeight.w500,
                             )
                           ),
                         ),
